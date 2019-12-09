@@ -487,3 +487,67 @@ footer {
         }
     }
 }
+
+@media (max-width: 1400px) {
+    @keyframes upDown {
+        0% {
+            top: 200px;
+        }
+        50% {
+            top: 80px;
+        }
+        100% {
+            top: 200px;
+        }
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+    }
+    
+    header {
+        .texto {
+            p {
+                width: 50%;
+            }
+        }
+        .phone {
+            right: -100px;
+            img {
+                max-width: 700px;
+            }
+        }
+        .destacados {
+            margin-top: 180px;
+            &_item {
+                padding-bottom: 80px;
+            }
+        }
+    }
+    .about {
+        p {
+            width: 90%;
+        }
+    }
+    .testimonials {
+        &_slider_item {
+            .datos {
+                width: 20%;
+            }
+            .texto {
+                width: calc(100% - 30px - 23%);
+            }
+        }
+    }
+    .testimonials_logos {
+        &_item {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
+
+}
