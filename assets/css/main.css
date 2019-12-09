@@ -359,3 +359,64 @@ header .destacados_item:hover {
 .testimonials_logos_item {
   width: calc(100% / 5);
 }
+
+.newsletter {
+  padding: 80px 0px;
+  text-align: center;
+}
+
+.newsletter h4 {
+  color: #909090;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.newsletter h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.newsletter form {
+  position: relative;
+}
+
+.newsletter form input {
+  width: 100%;
+  max-width: 745px;
+  height: 75px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  color: #909090;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  transition: all .2s;
+}
+
+.newsletter form input:focus {
+  color: #1D1D1B;
+}
+
+.newsletter form button {
+  width: 176px;
+  height: 75px;
+  background: #FF5100;
+  border: 1px solid transparent;
+  border-radius: 0px 10px 10px 0px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0px 10px 50px 0px rgba(255, 81, 0, 0.2);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.newsletter form button:hover {
+  background: #E7004C;
+  box-shadow: 0px 20px 50px 0px rgba(231, 0, 76, 0.4);
+}
