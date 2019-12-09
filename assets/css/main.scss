@@ -5,6 +5,9 @@ $grey: #909090;
 $lgrey: #F9F9F9;
 $white: #FFFFFF;
 
+html {
+    overflow: hidden;
+}
 body {
     margin: 0;
     padding: 0;
@@ -14,6 +17,51 @@ body {
 }
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes upDown {
+    0% {
+        top: 80px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: 80px;
+    }
+}
+@keyframes bigSmall-1 {
+    0%{
+        background-size: 50px, 50px, 63%;
+    }
+    50%{
+        background-size: 56px, 35px, 68%;
+    }
+    100%{
+        background-size: 50px, 50px, 63%;
+    }
+}
+@keyframes bigSmall-2 {
+    0%{
+        background-size: 50%;
+        background-position: -30px 20px;
+    }
+    50%{
+        background-size: 90%;
+        background-position: -500px 40px;
+    }
+    100%{
+        background-size: 50%;
+        background-position: -30px 20px;
+    }
 }
 
 .container {
@@ -54,6 +102,30 @@ h1, h2, h3, h4, h5, h6, p {
         }
     }
 }
+.preloader {
+    z-index: 120;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    svg {
+        width: 100px;
+        .st0 {
+            fill: $white;
+        }
+        #recuadro {
+            animation: rotate 1.5s infinite ease-in-out;
+            transform-origin: center;
+        }
+    }
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background: transparentize($black, .04);
+    z-index: 100;
+}
 
 .topnav {
     padding: 30px 0px;
@@ -67,6 +139,7 @@ header {
         ;
     background-size: 50px, 50px, 63%;
     position: relative;
+    animation: bigSmall-1 10s ease-in infinite;
     .texto {
         padding-bottom: 200px;
         z-index: 10;
@@ -91,6 +164,7 @@ header {
         position: absolute;
         top: 80px; right: 0px;
         text-align: right;
+        animation: upDown 10s ease-in-out infinite;
         img {
             width: 100%;
             max-width: 900px;
@@ -158,7 +232,6 @@ header {
         url('../images/shape-4.png') right 90% no-repeat
     ;
     background-size: contain, 70%;
-
     &_head {
         background: $white;
         padding: 50px;
@@ -292,7 +365,7 @@ header {
     .arrows {
         width: 100%;
         position: absolute;
-        z-index: 101;
+        z-index: 90;
         top: 55%;
         button {
             background: transparent;
@@ -329,56 +402,87 @@ header {
         width: calc(100% / 5);
     }
 }
-
-.newsletter {
-    padding: 80px 0px;
-    text-align: center;
-    h4 {
-        color: $grey;
-        text-transform: uppercase;
-        font-weight: 400;
-        margin-bottom: 20px;
-    }
-    h2 {
-        font-size: 36px;
-        margin-bottom: 40px;
-    }
-    form {
-        position: relative;
-        input {
-            width: 100%;
-            max-width: 745px;
-            height: 75px;
-            border: 1px solid $white;
-            border-radius: 10px 0px 0px 10px;
-            box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .1);
+footer {
+    background: url('../images/shape-5.png') -30px 20px no-repeat;
+    background-size: 50%;
+    animation: bigSmall-2 10s ease-in-out infinite;
+    .newsletter {
+        padding: 80px 0px;
+        text-align: center;
+        h4 {
             color: $grey;
-            font-size: 14px;
             text-transform: uppercase;
-            padding-left: 20px;
-            font-weight: 700;
-            letter-spacing: .3px;
-            transition: all .2s;
-            &:focus {
-                color: $black;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        form {
+            position: relative;
+            input {
+                width: 100%;
+                max-width: 745px;
+                height: 75px;
+                border: 1px solid $white;
+                border-radius: 10px 0px 0px 10px;
+                box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .1);
+                color: $grey;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding-left: 20px;
+                font-weight: 700;
+                letter-spacing: .3px;
+                transition: all .2s;
+                &:focus {
+                    color: $black;
+                }
+            }
+            button {
+                width: 176px;
+                height: 75px;
+                background: $pc;
+                border: 1px solid transparent;
+                border-radius: 0px 10px 10px 0px;
+                color: $white;
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                box-shadow: 0px 10px 50px 0px transparentize($pc, .8);
+                cursor: pointer;
+                transition: all .2s;
+                &:hover {
+                    background: $sc;
+                    box-shadow: 0px 20px 50px 0px transparentize($sc, .6);
+                }
             }
         }
-        button {
-            width: 176px;
-            height: 75px;
-            background: $pc;
-            border: 1px solid transparent;
-            border-radius: 0px 10px 10px 0px;
-            color: $white;
-            font-size: 14px;
-            font-weight: 700;
+    }
+    .downloads {
+        padding: 80px 0px;
+        text-align: center;
+        h4 {
+            color: $grey;
             text-transform: uppercase;
-            box-shadow: 0px 10px 50px 0px transparentize($pc, .8);
-            cursor: pointer;
-            transition: all .2s;
-            &:hover {
-                background: $sc;
-                box-shadow: 0px 20px 50px 0px transparentize($sc, .6);
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .linkcitos {
+            a {
+                background: $pc;
+                color: $white;
+                border: 1px solid transparent;
+                &:hover {
+                    background: $sc;
+                    box-shadow: 0px 10px 50px 0px transparentize($sc, .7);
+                }
             }
         }
     }

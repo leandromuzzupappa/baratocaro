@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +12,54 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    top: 80px;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: 80px;
+  }
+}
+
+@keyframes bigSmall-1 {
+  0% {
+    background-size: 50px, 50px, 63%;
+  }
+  50% {
+    background-size: 56px, 35px, 68%;
+  }
+  100% {
+    background-size: 50px, 50px, 63%;
+  }
+}
+
+@keyframes bigSmall-2 {
+  0% {
+    background-size: 50%;
+    background-position: -30px 20px;
+  }
+  50% {
+    background-size: 90%;
+    background-position: -500px 40px;
+  }
+  100% {
+    background-size: 50%;
+    background-position: -30px 20px;
+  }
 }
 
 .container {
@@ -49,6 +101,37 @@ h1, h2, h3, h4, h5, h6, p {
   color: #FFFFFF;
 }
 
+.preloader {
+  z-index: 120;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preloader svg {
+  width: 100px;
+}
+
+.preloader svg .st0 {
+  fill: #FFFFFF;
+}
+
+.preloader svg #recuadro {
+  animation: rotate 1.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(29, 29, 27, 0.96);
+  z-index: 100;
+}
+
 .topnav {
   padding: 30px 0px;
 }
@@ -58,6 +141,7 @@ header {
   background: url("../images/shape-2.png") 45% 650px no-repeat, url("../images/shape-2.png") 60% 210px no-repeat, url("../images/shape-1.png") -100px 0px no-repeat;
   background-size: 50px, 50px, 63%;
   position: relative;
+  animation: bigSmall-1 10s ease-in infinite;
 }
 
 header .texto {
@@ -89,6 +173,7 @@ header .phone {
   top: 80px;
   right: 0px;
   text-align: right;
+  animation: upDown 10s ease-in-out infinite;
 }
 
 header .phone img {
@@ -322,7 +407,7 @@ header .destacados_item:hover {
 .testimonials .arrows {
   width: 100%;
   position: absolute;
-  z-index: 101;
+  z-index: 90;
   top: 55%;
 }
 
@@ -360,28 +445,35 @@ header .destacados_item:hover {
   width: calc(100% / 5);
 }
 
-.newsletter {
+footer {
+  background: url("../images/shape-5.png") -30px 20px no-repeat;
+  background-size: 50%;
+  animation: bigSmall-2 10s ease-in-out infinite;
+}
+
+footer .newsletter {
   padding: 80px 0px;
   text-align: center;
 }
 
-.newsletter h4 {
+footer .newsletter h4 {
   color: #909090;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.newsletter h2 {
+footer .newsletter h2 {
   font-size: 36px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
-.newsletter form {
+footer .newsletter form {
   position: relative;
 }
 
-.newsletter form input {
+footer .newsletter form input {
   width: 100%;
   max-width: 745px;
   height: 75px;
@@ -397,11 +489,11 @@ header .destacados_item:hover {
   transition: all .2s;
 }
 
-.newsletter form input:focus {
+footer .newsletter form input:focus {
   color: #1D1D1B;
 }
 
-.newsletter form button {
+footer .newsletter form button {
   width: 176px;
   height: 75px;
   background: #FF5100;
@@ -416,7 +508,36 @@ header .destacados_item:hover {
   transition: all .2s;
 }
 
-.newsletter form button:hover {
+footer .newsletter form button:hover {
   background: #E7004C;
   box-shadow: 0px 20px 50px 0px rgba(231, 0, 76, 0.4);
+}
+
+footer .downloads {
+  padding: 80px 0px;
+  text-align: center;
+}
+
+footer .downloads h4 {
+  color: #909090;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+footer .downloads h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+footer .downloads .linkcitos a {
+  background: #FF5100;
+  color: #FFFFFF;
+  border: 1px solid transparent;
+}
+
+footer .downloads .linkcitos a:hover {
+  background: #E7004C;
+  box-shadow: 0px 10px 50px 0px rgba(231, 0, 76, 0.3);
 }
