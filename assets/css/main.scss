@@ -96,6 +96,8 @@ h1, h2, h3, h4, h5, h6, p {
         }
         &:hover {
             box-shadow: 0px 10px 30px 0px transparentize($pc, .7);
+            -moz-box-shadow: 0px 10px 30px 0px transparentize($pc, .7);
+            -webkit-box-shadow: 0px 10px 30px 0px transparentize($pc, .7);
             background: $pc;
             border: 1px solid transparent;
             color: $white;
@@ -179,6 +181,8 @@ header {
             padding: 50px;
             background: $white;
             box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
+            -moz-box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
+            -webkit-box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
             transition: all .2s;
             border-bottom: 5px solid $white;
             .icono {
@@ -237,6 +241,8 @@ header {
         padding: 50px;
         margin-top: 180px;
         box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
+        -moz-box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
+        -webkit-box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, .15);
         .info {
             width: 50%;
             h4 {
@@ -305,6 +311,8 @@ header {
         &:hover {
             z-index: 999;
             box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, .1);
+            -moz-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, .1);
+            -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, .1);
         }
     }
 }
@@ -429,6 +437,8 @@ footer {
                 border: 1px solid $white;
                 border-radius: 10px 0px 0px 10px;
                 box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .1);
+                -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .1);
+                -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .1);
                 color: $grey;
                 font-size: 14px;
                 text-transform: uppercase;
@@ -451,11 +461,15 @@ footer {
                 font-weight: 700;
                 text-transform: uppercase;
                 box-shadow: 0px 10px 50px 0px transparentize($pc, .8);
+                -moz-box-shadow: 0px 10px 50px 0px transparentize($pc, .8);
+                -webkit-box-shadow: 0px 10px 50px 0px transparentize($pc, .8);
                 cursor: pointer;
                 transition: all .2s;
                 &:hover {
                     background: $sc;
                     box-shadow: 0px 20px 50px 0px transparentize($sc, .6);
+                    -moz-box-shadow: 0px 20px 50px 0px transparentize($sc, .6);
+                    -webkit-box-shadow: 0px 20px 50px 0px transparentize($sc, .6);
                 }
             }
         }
@@ -482,6 +496,8 @@ footer {
                 &:hover {
                     background: $sc;
                     box-shadow: 0px 10px 50px 0px transparentize($sc, .7);
+                    -moz-box-shadow: 0px 10px 50px 0px transparentize($sc, .7);
+                    -webkit-box-shadow: 0px 10px 50px 0px transparentize($sc, .7);
                 }
             }
         }
@@ -622,10 +638,185 @@ footer {
         }
     }
     .testimonials {
-        
+        &_slider_item {
+            width: 100%;
+            .datos {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .texto {
+                width: 100%;
+                padding-left: 0;
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+        .arrows {
+            top: 31%;
+            .arrow_prev {
+                left: 50px;
+            }
+            .arrow_next {
+                right: 50px;
+            }
+        }
     }
-
-
-
-
+    .testimonials_logos {
+        &_item {
+            width: calc(100% / 3);
+        }
+    }
+    footer {
+        .newsletter {
+            padding-bottom: 0px;
+            form {
+                input {
+                    max-width: calc(100% - 30px);
+                    border-radius: 10px;
+                }
+                button {
+                    position: absolute;
+                    height: 79px; 
+                    right: 0;
+                }
+            }
+        }
+        .downloads {
+            .linkcitos {
+                a {
+                    display: block;
+                    width: 150px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: 85%;
+    }
+    .topnav {
+        .logo {
+            img {
+                width: 50%;
+            }
+        }
+    }
+    header {
+        padding-top: 20px;
+        .texto {
+            h4 {
+                font-size: 24px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        .linkcitos {
+            a {
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                background: $pc;
+                border: 1px solid transparent;
+                color: $white;
+                box-shadow: 0px 10px 20px 0px transparentize($pc, .8);
+                -moz-box-shadow: 0px 10px 20px 0px transparentize($pc, .8);
+                -webkit-box-shadow: 0px 10px 20px 0px transparentize($pc, .8);
+                &:first-child {
+                    margin-right: auto;
+                }
+                &:hover {
+                    background: $sc;
+                }
+            }
+        }
+        .destacados {
+            &_item {
+                height: auto;
+            }
+        }
+    }
+    .about {
+        h4 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 16px;
+            color: $grey;
+            &:last-child {
+                font-weight: 700;
+                color: $black;
+            }
+        }
+    }
+    .feature {
+        padding: 20px 0px;
+        background-size: 280%, 70%;
+        &_head {
+            .info {
+                width: 100%;   
+            }
+            .linkcitos {
+                a {
+                    background: $pc;
+                    color: $white;
+                    border: 1px solid transparent;
+                }
+            }
+            .lista {
+                width: 100%;
+                margin-top: 20px;
+                ul {
+                    padding-left: 0px;
+                }
+            }
+        }
+        &_item {
+            width: calc(100% - 100px);
+            border: 1px solid #dddddd;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+    }
+    .testimonials {
+        .arrows {
+            top: 22%;
+            .arrow_prev {
+                left: 10px;
+            }
+            .arrow_next {
+                right: 10px;
+            }
+        }
+    }
+    .testimonials_logos {
+        &_item {
+            width: 100%;
+            text-align: center;
+            img {
+                width: 80%;
+            }
+        }
+    }
+    footer {
+        .newsletter {
+            form {
+                input {
+                    border: 1px solid $lgrey;
+                }
+                button {
+                    position: relative;
+                    border-radius: 10px;
+                    height: 50px;
+                }
+            }
+        }
+    }
 }
